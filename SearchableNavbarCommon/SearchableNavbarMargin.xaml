@@ -8,7 +8,7 @@
              xmlns:imaging="clr-namespace:Microsoft.VisualStudio.Imaging;assembly=Microsoft.VisualStudio.Imaging"
              xmlns:vsshell="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Shell.15.0"
              xmlns:theming="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Imaging"
-             mc:Ignorable="d" Height="24" Loaded="UserControl_Loaded" Unloaded="UserControl_Unloaded"
+             mc:Ignorable="d" Loaded="UserControl_Loaded" Unloaded="UserControl_Unloaded"
              x:Name="SearchableNavbarControl"
              d:DesignHeight="450" d:DesignWidth="800" Visibility="Collapsed" GotFocus="UserControl_GotFocus" PreviewMouseDown="UserControl_PreviewMouseDown">
     <UserControl.Resources>
@@ -17,12 +17,14 @@
     </UserControl.Resources>
     <Grid x:Name="GridContainer" PreviewKeyDown="GridContainer_PreviewKeyDown" theming:ImageThemingUtilities.ImageBackgroundColor="{DynamicResource {x:Static vsshell:EnvironmentColors.ToolWindowBackgroundColorKey}}">
         <Border BorderBrush="#FF444444" BorderThickness="1"></Border>
+
         <TextBox x:Name="SearchInput" Style="{DynamicResource SomeTextBoxStyle}" TextChanged="FunctionsList_TextChanged" LostKeyboardFocus="SearchInput_LostKeyboardFocus" GotKeyboardFocus="SearchInput_GotKeyboardFocus" PreviewMouseDown="SearchInput_PreviewMouseDown" ContextMenuOpening="SearchInput_ContextMenuOpening">
             <TextBox.ContextMenu>
                 <ContextMenu x:Name="SearchInputContextMenu">
                 </ContextMenu>
             </TextBox.ContextMenu>
         </TextBox>
+
         <DockPanel x:Name="Overlay" IsHitTestVisible="False" Margin="5,0">
             <imaging:CrispImage Width="16" Height="16" Margin="0,0,2,0" Moniker="{Binding Path=Moniker}" />
             <TextBlock Text="{Binding Path=Scope}" Foreground="{DynamicResource {x:Static vsshell:CommonControlsColors.ComboBoxListItemTextBrushKey}}" Opacity="0.6" VerticalAlignment="Center"/>
@@ -30,9 +32,9 @@
             <TextBlock Text="{Binding Path=Signature}" Foreground="{DynamicResource {x:Static vsshell:CommonControlsColors.ComboBoxListItemTextBrushKey}}" Opacity="0.6" VerticalAlignment="Center"/>
         </DockPanel>
         <!--<Button HorizontalAlignment="Right" Content="Options" Click="OptionsButton_Click"/>-->
-        <Popup x:Name="ItemsPopup" Placement="Relative" VerticalOffset="24">
-            <Border MaxHeight="502">
-                <ListBox x:Name="FunctionsListBox" ItemsSource="{Binding}" Style="{DynamicResource ResultsListBox}" ScrollViewer.VerticalScrollBarVisibility="Auto" Focusable="False" SelectionChanged="FunctionsListBox_SelectionChanged" MinWidth="{Binding ActualWidth, ElementName=SearchInput}" VirtualizingStackPanel.IsVirtualizing="True" ScrollViewer.CanContentScroll="True">
+        <Popup x:Name="ItemsPopup">
+            <Border MaxHeight="1000">
+                <ListBox x:Name="FunctionsListBox" ItemsSource="{Binding}" Style="{DynamicResource ResultsListBox}" ScrollViewer.VerticalScrollBarVisibility="Auto" Focusable="False" SelectionChanged="FunctionsListBox_SelectionChanged" MinWidth="{Binding ActualWidth, ElementName=SearchInput}" VirtualizingStackPanel.IsVirtualizing="True" ScrollViewer.CanContentScroll="True" Height="1000">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <VirtualizingStackPanel />

@@ -1,0 +1,14 @@
+{
+  "FileVersion": 2,
+  "ProjectArguments": [
+    {
+      "Id": "f967341d-3f76-459b-aec4-3c5b3789374d",
+      "Items": [
+        {
+          "Id": "c84d1e5d-802c-44cc-bb96-ae8977dc56b5",
+          "Command": "/rootsuffix Exp"
+        }
+      ]
+    }
+  ]
+}

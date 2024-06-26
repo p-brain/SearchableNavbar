@@ -42,7 +42,7 @@
                     <Setter Property="Background" Value="Transparent"/>
                     <Setter Property="BorderThickness" Value="1" />
                     <Setter Property="BorderBrush" Value="Transparent" />
-                    <Setter Property="Height" Value="20" />
+                    <Setter Property="Height" Value="auto" />
                     <Setter Property="VerticalContentAlignment" Value="Center" />
                     <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay}" />
                     <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -86,8 +86,8 @@
         <Setter Property="Foreground" Value="{DynamicResource {x:Static vsshell:CommonControlsColors.ComboBoxListItemTextBrushKey}}" />
         <Setter Property="CaretBrush" Value="{DynamicResource {x:Static vsshell:CommonControlsColors.ComboBoxListItemTextBrushKey}}" />
         <Setter Property="Padding" Value="2" />
-        <Setter Property="Height" Value="24" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Height" Value="auto" />
+        <!--<Setter Property="VerticalContentAlignment" Value="Center" />-->
         <Setter Property="Padding" Value="3,2,3,1" />
         <Setter Property="Template">
             <Setter.Value>
@@ -161,7 +161,7 @@
         </Setter>
     </Style>
     <ControlTemplate x:Key="{x:Static MenuItem.SubmenuItemTemplateKey}" TargetType="{x:Type MenuItem}">
-        <Border x:Name="Border" BorderThickness="1" Height="22">
+        <Border x:Name="Border" BorderThickness="1" Height="auto">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" SharedSizeGroup="Icon" />
@@ -170,8 +170,8 @@
                     <ColumnDefinition Width="13" />
                 </Grid.ColumnDefinitions>
                 <ContentPresenter x:Name="Icon" Margin="6,0,6,0" VerticalAlignment="Center" ContentSource="Icon" />
-                <Border x:Name="Check" Width="14" Height="14" Visibility="Collapsed" Margin="6,0,6,0" BorderThickness="0" Background="{x:Null}">
-                    <Path x:Name="CheckMark" Width="9" Height="8" Visibility="Hidden" SnapsToDevicePixels="False" StrokeThickness="0" Stroke="{x:Null}" Data="M6.22,11.02C6.22,11.02 2.5,7.24 2.5,7.24 2.5,7.24 4.05,5.71 4.05,5.71 4.05,5.71 5.97,7.65 5.97,7.65 5.97,7.65 10.52,1.38 10.52,1.38 10.52,1.38 13.19,1.38 13.19,1.38 13.19,1.38 6.22,11.02 6.22,11.02 6.22,11.02 6.22,11.02 6.22,11.02z" Stretch="Fill" Fill="{DynamicResource {x:Static vsshell:EnvironmentColors.CommandBarCheckBoxBrushKey}}"/>
+                <Border x:Name="Check" Width="14" Height="auto" Visibility="Collapsed" Margin="6,0,6,0" BorderThickness="0" Background="{x:Null}">
+                    <Path x:Name="CheckMark" Width="9" Height="auto" Visibility="Hidden" SnapsToDevicePixels="False" StrokeThickness="0" Stroke="{x:Null}" Data="M6.22,11.02C6.22,11.02 2.5,7.24 2.5,7.24 2.5,7.24 4.05,5.71 4.05,5.71 4.05,5.71 5.97,7.65 5.97,7.65 5.97,7.65 10.52,1.38 10.52,1.38 10.52,1.38 13.19,1.38 13.19,1.38 13.19,1.38 6.22,11.02 6.22,11.02 6.22,11.02 6.22,11.02 6.22,11.02z" Stretch="Fill" Fill="{DynamicResource {x:Static vsshell:EnvironmentColors.CommandBarCheckBoxBrushKey}}"/>
                 </Border>
                 <ContentPresenter x:Name="HeaderHost" Grid.Column="1" ContentSource="Header" RecognizesAccessKey="True" VerticalAlignment="Center" Margin="0,0,0,0" />
                 <TextBlock x:Name="InputGestureText" Grid.Column="2" Text="{TemplateBinding InputGestureText}" Foreground="Gray" DockPanel.Dock="Right" VerticalAlignment="Center" Padding="20,0,0,0" />
