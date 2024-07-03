@@ -34,7 +34,7 @@
         <!--<Button HorizontalAlignment="Right" Content="Options" Click="OptionsButton_Click"/>-->
         <Popup x:Name="ItemsPopup">
             <Border MaxHeight="1000">
-                <ListBox x:Name="FunctionsListBox" ItemsSource="{Binding}" Style="{DynamicResource ResultsListBox}" ScrollViewer.VerticalScrollBarVisibility="Auto" Focusable="False" SelectionChanged="FunctionsListBox_SelectionChanged" MinWidth="{Binding ActualWidth, ElementName=SearchInput}" VirtualizingStackPanel.IsVirtualizing="True" ScrollViewer.CanContentScroll="True" Height="1000">
+                <ListBox x:Name="FunctionsListBox" ItemsSource="{Binding}" Style="{DynamicResource ResultsListBox}" ScrollViewer.VerticalScrollBarVisibility="Auto" Focusable="False" SelectionChanged="FunctionsListBox_SelectionChanged" MinWidth="{Binding ActualWidth, ElementName=SearchInput}" VirtualizingStackPanel.IsVirtualizing="True" ScrollViewer.CanContentScroll="True" Height="auto">
                     <ListBox.ItemsPanel>
                         <ItemsPanelTemplate>
                             <VirtualizingStackPanel />
